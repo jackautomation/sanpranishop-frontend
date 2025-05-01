@@ -1,3 +1,5 @@
+require('dotenv').config({ path: require('path').resolve(__dirname, '../../.env') });
+
 const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
@@ -15,13 +17,13 @@ app.use(bodyParser.json());
 
 // Create a MySQL connection
 const db = mysql.createConnection({
-  host: 'metro.proxy.rlwy.net',
-  user: 'root', // Your MySQL username
-  password: 'zOXRqIfNTQZxItHTsYIffPcqSRdbtZNi', // Your MySQL password
-  database: 'railway', // Your database name
-  port: 45607, // Your MySQL port (default is 3306)
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER, // Your MySQL username
+  password: process.env.DB_PASSWORD, // Your MySQL password
+  database: process.env.DB_NAME, // Your database name
+  port: process.env.DB_PORT, // Your MySQL port (default is 3306)
   ssl: { rejectUnauthorized: false }
-});
+});   
 
 // Connect to MySQL
 db.connect((err) => {
