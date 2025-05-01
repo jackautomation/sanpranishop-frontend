@@ -1,5 +1,4 @@
 import React from "react";
-import ToDo from "./components/ToDo";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MenuPage from "./components/MenuPage";

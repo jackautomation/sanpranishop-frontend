@@ -33,7 +33,7 @@ function RegisterPage() {
 
       try {
         // Send the form data to the backend
-        const response = await axios.post('http://localhost:5000/register', formData);
+        const response = await axios.post('https://sanpranishop-backend-production.up.railway.app/register', formData);
         console.log('Registration Success:', response.data);
         // Redirect or show success message
       } catch (error) {
